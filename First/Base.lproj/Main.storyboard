@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vgg-V7-FxP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="w1a-Zd-0AY">
+            <objects>
+                <navigationController id="vgg-V7-FxP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KKx-gU-VXl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7kU-yn-h9I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIP-2o-lkg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1518" y="-28"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="First" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="J4X-sa-7tz">
+                                <rect key="frame" x="115.5" y="287.5" width="183" height="321"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBc-qQ-ib3">
+                                        <rect key="frame" x="0.0" y="0.0" width="183" height="41"/>
+                                        <string key="text">Please select the areas
+which are affecting you:</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoH-uS-BYc">
+                                        <rect key="frame" x="0.0" y="81" width="183" height="30"/>
+                                        <state key="normal" title="Face"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4de-hO-u3c">
+                                        <rect key="frame" x="0.0" y="151" width="183" height="30"/>
+                                        <state key="normal" title="Arm"/>
+                                        <connections>
+                                            <segue destination="t1M-ZK-gdx" kind="show" id="iqq-Sx-47G"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRj-CU-nkc">
+                                        <rect key="frame" x="0.0" y="221" width="183" height="30"/>
+                                        <state key="normal" title="Body"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8F9-4u-NYM">
+                                        <rect key="frame" x="0.0" y="291" width="183" height="30"/>
+                                        <state key="normal" title="Leg"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79068571652636299" green="1" blue="0.72251504382564868" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="J4X-sa-7tz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OeX-Pq-mHy"/>
+                            <constraint firstItem="J4X-sa-7tz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ykW-nZ-XIl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tBE-nk-ZqE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-709" y="-28"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JD3-HE-2xO">
+            <objects>
+                <viewController id="t1M-ZK-gdx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iyq-nc-O6t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="sR5-sW-2b0">
+                                <rect key="frame" x="111" y="281" width="192" height="334"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It must be very hard expreiencing this." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocD-Dk-UKi">
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="41"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select other areas affecting you:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98d-7W-MkO">
+                                        <rect key="frame" x="0.0" y="58" width="192" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DI7-Hv-RvX">
+                                        <rect key="frame" x="0.0" y="116" width="192" height="30"/>
+                                        <state key="normal" title="Face"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLe-IK-fAA">
+                                        <rect key="frame" x="0.0" y="163" width="192" height="30"/>
+                                        <state key="normal" title="Arm"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y8-Bb-lW0">
+                                        <rect key="frame" x="0.0" y="210" width="192" height="30"/>
+                                        <state key="normal" title="Leg"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaA-cN-22C">
+                                        <rect key="frame" x="0.0" y="257" width="192" height="30"/>
+                                        <state key="normal" title="Body"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeD-eG-Kav">
+                                        <rect key="frame" x="0.0" y="304" width="192" height="30"/>
+                                        <state key="normal" title="No other Locations"/>
+                                        <connections>
+                                            <segue destination="pOO-HQ-1MJ" kind="show" id="OkZ-oG-pqD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7513257680480836" green="1" blue="0.71970772530315252" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="sR5-sW-2b0" firstAttribute="centerX" secondItem="iyq-nc-O6t" secondAttribute="centerX" id="kEI-mL-ZwE"/>
+                            <constraint firstItem="sR5-sW-2b0" firstAttribute="centerY" secondItem="iyq-nc-O6t" secondAttribute="centerY" id="u3N-yZ-KBA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sde-OQ-Vqf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H4R-fV-Z4s"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zo8-6i-bP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.565217391304358" y="-22.098214285714285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pL0-gg-eMU">
+            <objects>
+                <viewController id="pOO-HQ-1MJ" customClass="ViewController" customModule="First" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yfc-r9-JhJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="jRD-P7-qmg">
+                                <rect key="frame" x="87" y="342" width="240" height="380"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please take a picture of your arm." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UN6-vg-aV1">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="41"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please ensure that the full lesion is displayed in the picture." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3Z-RE-UUV">
+                                        <rect key="frame" x="0.0" y="81" width="240" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lj9-da-GGH">
+                                        <rect key="frame" x="0.0" y="182" width="240" height="128"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJ0-zw-PaD">
+                                        <rect key="frame" x="0.0" y="350" width="240" height="30"/>
+                                        <state key="normal" title="Take a picture"/>
+                                        <connections>
+                                            <action selector="takePhoto:" destination="pOO-HQ-1MJ" eventType="touchUpInside" id="YDa-nQ-KMU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77133181968436615" green="1" blue="0.7733933584849968" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="jRD-P7-qmg" firstAttribute="centerX" secondItem="yfc-r9-JhJ" secondAttribute="centerX" id="Ml9-uZ-7SI"/>
+                            <constraint firstItem="jRD-P7-qmg" firstAttribute="centerY" secondItem="yfc-r9-JhJ" secondAttribute="centerY" id="U4a-Ip-hB5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LG8-JO-YQo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rxx-xK-N26"/>
+                    <connections>
+                        <outlet property="imageView" destination="lj9-da-GGH" id="FVf-sy-Nq2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rn1-za-cQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857.97101449275374" y="-19.419642857142858"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eFU-VJ-j2K">
+            <objects>
+                <viewController id="y8q-20-fOV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UX4-LF-8PO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="p6Z-cc-VIS">
+                                <rect key="frame" x="51" y="377" width="312.5" height="142"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excellent! Thank  you for taking the picture." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nni-j2-urC">
+                                        <rect key="frame" x="0.0" y="0.0" width="312.5" height="61"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next, please take an image of your leg. Ensure that the full lesion is in the image." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3a-cD-XPv">
+                                        <rect key="frame" x="0.0" y="101" width="312.5" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="p6Z-cc-VIS" firstAttribute="centerY" secondItem="UX4-LF-8PO" secondAttribute="centerY" id="bFa-LS-37v"/>
+                            <constraint firstItem="p6Z-cc-VIS" firstAttribute="centerX" secondItem="UX4-LF-8PO" secondAttribute="centerX" id="yDK-f1-1lq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xm6-1z-ChE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OSW-SK-yH7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="-28"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="en4-r0-osq">
+            <objects>
+                <viewController id="aqc-kt-mH2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nEh-pP-lpR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="pdQ-Pn-IPh">
+                                <rect key="frame" x="97.5" y="327.5" width="219" height="241.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have mild eczema." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efa-ER-86F">
+                                        <rect key="frame" x="0.0" y="0.0" width="219" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Based on the results. This is  what we would recommend:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgm-e2-vpH">
+                                        <rect key="frame" x="0.0" y="60.5" width="219" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXM-NY-vv9">
+                                        <rect key="frame" x="0.0" y="141.5" width="219" height="30"/>
+                                        <state key="normal" title="Treatment 1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBs-Io-nRK">
+                                        <rect key="frame" x="0.0" y="211.5" width="219" height="30"/>
+                                        <state key="normal" title="Treatment 2"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pdQ-Pn-IPh" firstAttribute="centerX" secondItem="nEh-pP-lpR" secondAttribute="centerX" id="Iru-fe-134"/>
+                            <constraint firstItem="pdQ-Pn-IPh" firstAttribute="centerY" secondItem="nEh-pP-lpR" secondAttribute="centerY" id="OEd-AM-2HG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LR1-Bg-KwY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rn9-lh-5os" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3187" y="-22"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="J8O-OO-zma">
+            <objects>
+                <viewController id="41g-Bi-z71" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mkr-dc-2ys">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="WVH-p2-01i">
+                                <rect key="frame" x="26" y="407.5" width="362" height="81"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great Pictures!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2Y-xW-sSC">
+                                        <rect key="frame" x="0.0" y="0.0" width="362" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give us a moment while we work on the results." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ew4-Mq-Pco">
+                                        <rect key="frame" x="0.0" y="60.5" width="362" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WVH-p2-01i" firstAttribute="centerY" secondItem="Mkr-dc-2ys" secondAttribute="centerY" id="Z8j-bP-kOy"/>
+                            <constraint firstItem="WVH-p2-01i" firstAttribute="centerX" secondItem="Mkr-dc-2ys" secondAttribute="centerX" id="g1S-CH-x2i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dNk-tM-FQB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zst-Bo-7qX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2383" y="-22"/>
+        </scene>
+    </scenes>
+</document>
