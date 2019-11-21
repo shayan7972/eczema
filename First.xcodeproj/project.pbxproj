@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4015DEA236CD04500B1C167 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015DE9236CD04500B1C167 /* Patient.swift */; };
+		E4015DEC236D559900B1C167 /* PatientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015DEB236D559900B1C167 /* PatientTableViewCell.swift */; };
+		E4015DEE236D59D900B1C167 /* PatientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015DED236D59D900B1C167 /* PatientTableViewController.swift */; };
+		E4015DF0236D60FD00B1C167 /* PatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015DEF236D60FD00B1C167 /* PatientViewController.swift */; };
+		E4015DFA2378BAB500B1C167 /* TakePictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015DF92378BAB500B1C167 /* TakePictureTableViewCell.swift */; };
+		E4015E002378E19300B1C167 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015DFF2378E19300B1C167 /* BodyPart.swift */; };
+		E4015E022379D46A00B1C167 /* SubmitPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015E012379D46A00B1C167 /* SubmitPhotosViewController.swift */; };
+		E4015E03237A5A4B00B1C167 /* BodyPartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015DF32377C63200B1C167 /* BodyPartsViewController.swift */; };
+		E4015E05237BA7A900B1C167 /* ExaminationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015E04237BA7A800B1C167 /* ExaminationResult.swift */; };
+		E4015E07237BA95300B1C167 /* Prescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015E06237BA95300B1C167 /* Prescription.swift */; };
+		E4015E09237BAB3000B1C167 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015E08237BAB3000B1C167 /* Medication.swift */; };
+		E4015E0B237BBBAB00B1C167 /* ActionPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015E0A237BBBAB00B1C167 /* ActionPlanViewController.swift */; };
+		E4015E0D237BBCC500B1C167 /* BodyPartResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015E0C237BBCC500B1C167 /* BodyPartResultTableViewCell.swift */; };
+		E4015E0F237BC54800B1C167 /* MedicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015E0E237BC54800B1C167 /* MedicationTableViewCell.swift */; };
 		E4457C25236A5A2100BF14AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4457C24236A5A2100BF14AA /* AppDelegate.swift */; };
 		E4457C27236A5A2100BF14AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4457C26236A5A2100BF14AA /* SceneDelegate.swift */; };
 		E4457C29236A5A2100BF14AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4457C28236A5A2100BF14AA /* ViewController.swift */; };
@@ -27,6 +41,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4015DE9236CD04500B1C167 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		E4015DEB236D559900B1C167 /* PatientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientTableViewCell.swift; sourceTree = "<group>"; };
+		E4015DED236D59D900B1C167 /* PatientTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientTableViewController.swift; sourceTree = "<group>"; };
+		E4015DEF236D60FD00B1C167 /* PatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientViewController.swift; sourceTree = "<group>"; };
+		E4015DF32377C63200B1C167 /* BodyPartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartsViewController.swift; sourceTree = "<group>"; };
+		E4015DF92378BAB500B1C167 /* TakePictureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureTableViewCell.swift; sourceTree = "<group>"; };
+		E4015DFF2378E19300B1C167 /* BodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
+		E4015E012379D46A00B1C167 /* SubmitPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitPhotosViewController.swift; sourceTree = "<group>"; };
+		E4015E04237BA7A800B1C167 /* ExaminationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExaminationResult.swift; sourceTree = "<group>"; };
+		E4015E06237BA95300B1C167 /* Prescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prescription.swift; sourceTree = "<group>"; };
+		E4015E08237BAB3000B1C167 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		E4015E0A237BBBAB00B1C167 /* ActionPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPlanViewController.swift; sourceTree = "<group>"; };
+		E4015E0C237BBCC500B1C167 /* BodyPartResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartResultTableViewCell.swift; sourceTree = "<group>"; };
+		E4015E0E237BC54800B1C167 /* MedicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTableViewCell.swift; sourceTree = "<group>"; };
 		E4457C21236A5A2100BF14AA /* First.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = First.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4457C24236A5A2100BF14AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4457C26236A5A2100BF14AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,15 +109,29 @@
 		E4457C23236A5A2100BF14AA /* First */ = {
 			isa = PBXGroup;
 			children = (
+				E4015DF32377C63200B1C167 /* BodyPartsViewController.swift */,
 				E4457C47236A686200BF14AA /* FirstRelease.entitlements */,
 				E4457C46236A67F800BF14AA /* First.entitlements */,
 				E4457C24236A5A2100BF14AA /* AppDelegate.swift */,
 				E4457C26236A5A2100BF14AA /* SceneDelegate.swift */,
 				E4457C28236A5A2100BF14AA /* ViewController.swift */,
 				E4457C2A236A5A2100BF14AA /* Main.storyboard */,
+				E4015E0A237BBBAB00B1C167 /* ActionPlanViewController.swift */,
+				E4015E0C237BBCC500B1C167 /* BodyPartResultTableViewCell.swift */,
+				E4015E0E237BC54800B1C167 /* MedicationTableViewCell.swift */,
+				E4015E04237BA7A800B1C167 /* ExaminationResult.swift */,
+				E4015E06237BA95300B1C167 /* Prescription.swift */,
+				E4015E08237BAB3000B1C167 /* Medication.swift */,
+				E4015E012379D46A00B1C167 /* SubmitPhotosViewController.swift */,
+				E4015DEF236D60FD00B1C167 /* PatientViewController.swift */,
+				E4015DEB236D559900B1C167 /* PatientTableViewCell.swift */,
+				E4015DF92378BAB500B1C167 /* TakePictureTableViewCell.swift */,
+				E4015DED236D59D900B1C167 /* PatientTableViewController.swift */,
 				E4457C2D236A5A2400BF14AA /* Assets.xcassets */,
 				E4457C2F236A5A2400BF14AA /* LaunchScreen.storyboard */,
 				E4457C32236A5A2400BF14AA /* Info.plist */,
+				E4015DE9236CD04500B1C167 /* Patient.swift */,
+				E4015DFF2378E19300B1C167 /* BodyPart.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -205,7 +247,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4457C29236A5A2100BF14AA /* ViewController.swift in Sources */,
+				E4015E03237A5A4B00B1C167 /* BodyPartsViewController.swift in Sources */,
+				E4015E022379D46A00B1C167 /* SubmitPhotosViewController.swift in Sources */,
+				E4015DF0236D60FD00B1C167 /* PatientViewController.swift in Sources */,
+				E4015E002378E19300B1C167 /* BodyPart.swift in Sources */,
+				E4015DEA236CD04500B1C167 /* Patient.swift in Sources */,
+				E4015E05237BA7A900B1C167 /* ExaminationResult.swift in Sources */,
+				E4015E07237BA95300B1C167 /* Prescription.swift in Sources */,
+				E4015E09237BAB3000B1C167 /* Medication.swift in Sources */,
+				E4015E0D237BBCC500B1C167 /* BodyPartResultTableViewCell.swift in Sources */,
+				E4015DEC236D559900B1C167 /* PatientTableViewCell.swift in Sources */,
+				E4015DFA2378BAB500B1C167 /* TakePictureTableViewCell.swift in Sources */,
 				E4457C25236A5A2100BF14AA /* AppDelegate.swift in Sources */,
+				E4015DEE236D59D900B1C167 /* PatientTableViewController.swift in Sources */,
+				E4015E0F237BC54800B1C167 /* MedicationTableViewCell.swift in Sources */,
+				E4015E0B237BBBAB00B1C167 /* ActionPlanViewController.swift in Sources */,
 				E4457C27236A5A2100BF14AA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,11 +423,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = First/First.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3926M3WHXF;
 				INFOPLIST_FILE = First/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,11 +445,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = First/FirstRelease.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3926M3WHXF;
 				INFOPLIST_FILE = First/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
