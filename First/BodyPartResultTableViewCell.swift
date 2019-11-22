@@ -14,11 +14,14 @@ class BodyPartResultTableViewCell: UITableViewCell {
     var severity : String?
     var medications = [Medication]()
     
-    @IBOutlet weak var progressBar: UIProgressView!
     
     @IBOutlet weak var iconImage: UIImageView!
     
     @IBOutlet weak var medic: UILabel!
+    
+    @IBOutlet weak var statusCircle: UILabel!
+    
+    @IBOutlet weak var statusLabel: UILabel!
     
     func setEverything(bodypart: BodyPart, sev: String ){
         body = bodypart
@@ -27,37 +30,50 @@ class BodyPartResultTableViewCell: UITableViewCell {
         iconImage.image = body?.icon
         let prescription = Prescription(severity: sev, bodypart: bodypart.name)
         medications = prescription.medications
-        print(medications)
         writeInMedications()
     }
     
-    func writeInMedications(){
-        for m in medications{
-            medic.text! += m.title + ":" + m.frequency + "\n"
+    func setEverythingGeneral(int: Int){
+        let prescription = Prescription()
+        medications.removeAll()
+        medications.append(prescription.medications[int])
+        if (int == 0){
+            iconImage.image = UIImage(named: "bathtub")
         }
-        medic.numberOfLines = medications.count - 1
+        else if (int == 1){
+            iconImage.image = UIImage(named: "ointment")
+        }
+        statusLabel.text = medications[0].title
+        statusCircle.backgroundColor = UIColor.white
+        medic.text = medications[0].frequency
+    }
+    
+    func writeInMedications(){
+        medic.text = ""
+        for m in medications{
+            medic.text! += m.title + ": " + m.frequency + "\n"
+        }
+        medic.numberOfLines = medications.count
     }
     
     
     func fillProgressBar(){
         if (severity == "under-control"){
-            progressBar.progress = 0.3
-            progressBar.progressTintColor = UIColor.green
+            statusCircle.backgroundColor = UIColor.green
         }
         else if (severity == "flare-up"){
-            progressBar.progress = 0.6
-            progressBar.progressTintColor = UIColor.yellow
+            statusCircle.backgroundColor = UIColor.yellow
             
         }
         else if (severity == "out-of-control"){
-            progressBar.progress = 0.85
-            progressBar.progressTintColor = UIColor.red
+            statusCircle.backgroundColor = UIColor.red
             
         }
         else if (severity == "no-skin-detected"){
-            progressBar.progress = 0.1
-            progressBar.progressTintColor = UIColor.gray
+            statusCircle.backgroundColor = UIColor.gray
         }
+        statusLabel.text = severity
+
     }
     
     override func awakeFromNib() {

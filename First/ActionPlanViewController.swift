@@ -14,8 +14,19 @@ class ActionPlanViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var table: UITableView!
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        bodyparts.count
+        if (segmentedControl.selectedSegmentIndex == 0){
+            return bodyparts.count
+        }
+        else {
+            return 2
+        }
+    }
+    
+    @IBAction func indexChanged(_ sender: Any) {
+        self.table.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -25,10 +36,19 @@ class ActionPlanViewController: UIViewController, UITableViewDelegate, UITableVi
         let part = bodyparts[indexPath.row]
         let sev = severities[indexPath.row]
         
-        cell.setEverything(bodypart: part, sev: sev)
+        if (segmentedControl.selectedSegmentIndex == 0){
+            cell.setEverything(bodypart: part, sev: sev)
+        }
+        else {
+            cell.setEverythingGeneral(int: indexPath.row)
+        }
+        cell.selectionStyle = .none
+
         
         return cell
     }
+    
+    
     
 
     override func viewDidLoad() {

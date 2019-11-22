@@ -40,6 +40,7 @@ class SubmitPhotosViewController: UIViewController, UITableViewDelegate,UITableV
         cell.setBodyPart(part: part)
         cell.delegate = self
         cell.tag = indexPath.row
+        cell.selectionStyle = .none
         
         return cell
     }
