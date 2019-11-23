@@ -26,6 +26,7 @@ class ActionPlanViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func indexChanged(_ sender: Any) {
+        self.table.reloadInputViews()
         self.table.reloadData()
     }
     
@@ -33,10 +34,11 @@ class ActionPlanViewController: UIViewController, UITableViewDelegate, UITableVi
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BodyPartResultTableViewCell", for: indexPath) as? BodyPartResultTableViewCell else {
             fatalError("The dequeued cell is not an instance of PatientTableViewCell.")
         }
-        let part = bodyparts[indexPath.row]
-        let sev = severities[indexPath.row]
+        
         
         if (segmentedControl.selectedSegmentIndex == 0){
+            let part = bodyparts[indexPath.row]
+            let sev = severities[indexPath.row]
             cell.setEverything(bodypart: part, sev: sev)
         }
         else {

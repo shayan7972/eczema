@@ -21,6 +21,7 @@
 		E4015E0B237BBBAB00B1C167 /* ActionPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015E0A237BBBAB00B1C167 /* ActionPlanViewController.swift */; };
 		E4015E0D237BBCC500B1C167 /* BodyPartResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015E0C237BBCC500B1C167 /* BodyPartResultTableViewCell.swift */; };
 		E4015E0F237BC54800B1C167 /* MedicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015E0E237BC54800B1C167 /* MedicationTableViewCell.swift */; };
+		E4015E112388AF2900B1C167 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4015E102388AF2900B1C167 /* HomeViewController.swift */; };
 		E4457C25236A5A2100BF14AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4457C24236A5A2100BF14AA /* AppDelegate.swift */; };
 		E4457C27236A5A2100BF14AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4457C26236A5A2100BF14AA /* SceneDelegate.swift */; };
 		E4457C29236A5A2100BF14AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4457C28236A5A2100BF14AA /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		E4015E0A237BBBAB00B1C167 /* ActionPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPlanViewController.swift; sourceTree = "<group>"; };
 		E4015E0C237BBCC500B1C167 /* BodyPartResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartResultTableViewCell.swift; sourceTree = "<group>"; };
 		E4015E0E237BC54800B1C167 /* MedicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTableViewCell.swift; sourceTree = "<group>"; };
+		E4015E102388AF2900B1C167 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E4457C21236A5A2100BF14AA /* First.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = First.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4457C24236A5A2100BF14AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4457C26236A5A2100BF14AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				E4457C26236A5A2100BF14AA /* SceneDelegate.swift */,
 				E4457C28236A5A2100BF14AA /* ViewController.swift */,
 				E4457C2A236A5A2100BF14AA /* Main.storyboard */,
+				E4015E102388AF2900B1C167 /* HomeViewController.swift */,
 				E4015E0A237BBBAB00B1C167 /* ActionPlanViewController.swift */,
 				E4015E0C237BBCC500B1C167 /* BodyPartResultTableViewCell.swift */,
 				E4015E0E237BC54800B1C167 /* MedicationTableViewCell.swift */,
@@ -251,6 +254,7 @@
 				E4015E022379D46A00B1C167 /* SubmitPhotosViewController.swift in Sources */,
 				E4015DF0236D60FD00B1C167 /* PatientViewController.swift in Sources */,
 				E4015E002378E19300B1C167 /* BodyPart.swift in Sources */,
+				E4015E112388AF2900B1C167 /* HomeViewController.swift in Sources */,
 				E4015DEA236CD04500B1C167 /* Patient.swift in Sources */,
 				E4015E05237BA7A900B1C167 /* ExaminationResult.swift in Sources */,
 				E4015E07237BA95300B1C167 /* Prescription.swift in Sources */,

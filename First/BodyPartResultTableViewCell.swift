@@ -58,21 +58,28 @@ class BodyPartResultTableViewCell: UITableViewCell {
     
     
     func fillProgressBar(){
-        if (severity == "under-control"){
+        if (severity == "0_nomral"){
+            statusLabel.text = "Clear"
             statusCircle.backgroundColor = UIColor.green
         }
-        else if (severity == "flare-up"){
+        else if (severity == "1_mild"){
+            statusLabel.text = "Under Control"
             statusCircle.backgroundColor = UIColor.yellow
+        }
+        else if (severity == "2_moderate"){
+            statusLabel.text = "Flare Up"
+            statusCircle.backgroundColor = UIColor.orange
             
         }
-        else if (severity == "out-of-control"){
+        else if (severity == "3_severe"){
+            statusLabel.text = "Out of Control"
             statusCircle.backgroundColor = UIColor.red
             
         }
         else if (severity == "no-skin-detected"){
+            statusLabel.text = "No Skin Detected"
             statusCircle.backgroundColor = UIColor.gray
         }
-        statusLabel.text = severity
 
     }
     

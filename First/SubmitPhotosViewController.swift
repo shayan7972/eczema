@@ -51,42 +51,33 @@ class SubmitPhotosViewController: UIViewController, UITableViewDelegate,UITableV
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let severities = ["under-control","flare-up","out-of-control"]
-        var sev = [String]()
+//        let severities = ["under-control","flare-up","out-of-control"]
+//
         
-        sendRequestToServer()
         //send body part to server and ask for an answer
-        //for bp in bodyparts
-        // sev = ask_for_severity(bp)
-        // severities.append(sev)
+        let sev = sendRequestToServer()
+
         let actionplanview = segue.destination as? ActionPlanViewController
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        print(bodyparts)
-        print(bodyparts.count)
-        
-        for _ in 1...bodyparts.count{
-            let randomName = severities.randomElement()!
-            sev.append(randomName)
-        }
-        print(sev)
         
         
         actionplanview?.bodyparts = bodyparts
         actionplanview?.severities = sev
     }
     
-    func sendRequestToServer(){
+    func sendRequestToServer()->[String]{
         let url = URL(string: "http://hello-bond.appspot.com/predict")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        let parameters: [String: Any] = [
-            "head": bodyparts.filter { $0.name == "face" },
-            "right_hand": bodyparts.filter { $0.name == "arm" },
-            "right_foot": bodyparts.filter { $0.name == "foot" },
-        ]
+        var sev = [String]()
+        var parameters: [String: Any] = [:]
+        for body in bodyparts {
+            parameters[body.name] = body.icon
+        }
+        
         request.httpBody = parameters.percentEscaped().data(using: .utf8)
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -100,14 +91,24 @@ class SubmitPhotosViewController: UIViewController, UITableViewDelegate,UITableV
             guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
                 print("statusCode should be 2xx, but is \(response.statusCode)")
                 print("response = \(response)")
+                
                 return
             }
 
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString)")
+//            let responseString = String(data: data, encoding: .utf8)
+//            print("responseString = \(responseString)")
+            print(data)
+            print(response)
+            
+            let json_dictionary = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: String]
+            print(json_dictionary)
+            for bp in self.bodyparts{
+                sev.append((json_dictionary?[bp.name])!)
+            }
         }
 
         task.resume()
+        return sev
     }
     
     
