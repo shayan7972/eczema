@@ -12,10 +12,10 @@ import UIKit
 class Prescription{
     var medications = [Medication]()
     
-    let body1 = ["face","neck","armpit","groin"]
-    let body2 = ["arm","leg","hand","foot","torso"]
+    let body1 = ["face","neck","armpit","groin","head"]
+    let body2 = ["arm","leg","hand","foot","torso","left_hand","left_foot","right_hand","right_foot"]
     
-    let denso = Medication(title: "Densonide", freq: "two times a day",dose: 0.05,type: "ointment")
+    let denso = Medication(title: "Desonide", freq: "two times a day",dose: 0.05,type: "ointment")
     let proto = Medication(title: "Protopic", freq: "two times a day",dose: 0.1,type: "ointment")
     let betha = Medication(title: "Bethamethasone", freq: "two times a day",dose: 0.1,type: "ointment")
     let clob = Medication(title: "Clobetasol", freq: "two times a day",dose: 0.05,type: "ointment")
@@ -35,10 +35,10 @@ class Prescription{
     
     // 
     init(severity: String, bodypart: String) {
-        if(severity=="under-control"){
+        if(severity=="1_mild"){
             
         }
-        else if (severity == "flare-up"){
+        else if (severity == "2_moderate"){
             if (body1.contains(bodypart)){
                 medications.append(denso)
                 medications.append(proto)
@@ -50,7 +50,7 @@ class Prescription{
             }
             
         }
-        else if (severity == "out-of-control"){
+        else if (severity == "3_severe"){
             if (body1.contains(bodypart)){
                 betha.duration = "No more than 14 out of 21 days"
                 medications.append(betha)

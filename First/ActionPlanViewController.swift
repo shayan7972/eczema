@@ -14,14 +14,14 @@ class ActionPlanViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var table: UITableView!
     
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var segmented: UISegmentedControl!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (segmentedControl.selectedSegmentIndex == 0){
-            return bodyparts.count
+        if (segmented.selectedSegmentIndex == 0){
+            return 2
         }
         else {
-            return 2
+            return bodyparts.count
         }
     }
     
@@ -35,20 +35,24 @@ class ActionPlanViewController: UIViewController, UITableViewDelegate, UITableVi
             fatalError("The dequeued cell is not an instance of PatientTableViewCell.")
         }
         
-        
-        if (segmentedControl.selectedSegmentIndex == 0){
+        if (segmented.selectedSegmentIndex == 0){
+            cell.setEverythingGeneral(int: indexPath.row)
+        }
+        else {
+            if (severities.isEmpty){
+                severities = [String](repeating: "not_processed", count: bodyparts.count)
+            }
             let part = bodyparts[indexPath.row]
             let sev = severities[indexPath.row]
             cell.setEverything(bodypart: part, sev: sev)
-        }
-        else {
-            cell.setEverythingGeneral(int: indexPath.row)
         }
         cell.selectionStyle = .none
 
         
         return cell
     }
+    
+
     
     
     
@@ -59,8 +63,11 @@ class ActionPlanViewController: UIViewController, UITableViewDelegate, UITableVi
         table.dataSource = self
 
 
+
         // Do any additional setup after loading the view.
     }
+    
+
     
 
     /*

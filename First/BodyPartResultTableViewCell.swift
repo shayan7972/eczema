@@ -49,16 +49,17 @@ class BodyPartResultTableViewCell: UITableViewCell {
     }
     
     func writeInMedications(){
+        medic.numberOfLines = medications.count
         medic.text = ""
         for m in medications{
             medic.text! += m.title + ": " + m.frequency + "\n"
         }
-        medic.numberOfLines = medications.count
+        
     }
     
     
     func fillProgressBar(){
-        if (severity == "0_nomral"){
+        if (severity == "0_normal"){
             statusLabel.text = "Clear"
             statusCircle.backgroundColor = UIColor.green
         }
@@ -76,9 +77,19 @@ class BodyPartResultTableViewCell: UITableViewCell {
             statusCircle.backgroundColor = UIColor.red
             
         }
-        else if (severity == "no-skin-detected"){
+        else if (severity == "4_infected"){
+                statusLabel.text = "Infected"
+                statusCircle.backgroundColor = UIColor.black
+                
+        }
+        else if (severity == "no_skin_detected"){
             statusLabel.text = "No Skin Detected"
             statusCircle.backgroundColor = UIColor.gray
+        }
+        else if (severity == "not_processed"){
+            statusLabel.text = "Not Processed"
+            statusCircle.backgroundColor = UIColor.purple
+            medic.text = "Picture not processed."
         }
 
     }

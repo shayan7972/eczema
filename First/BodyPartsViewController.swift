@@ -24,18 +24,18 @@ class BodyPartsViewController: UIViewController {
     
     @IBAction func bodyPartTapped (_ sender: UIButton){
         UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveLinear, animations: {
-            sender.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             sender.isSelected = !sender.isSelected
             if (sender.isSelected){
-                self.body_selected.append(sender.titleLabel!.text!)
+                self.body_selected.append(sender.titleLabel!.text!.lowercased())
             } else{
-                if let index = self.body_selected.firstIndex(of: sender.titleLabel!.text!) {
+                if let index = self.body_selected.firstIndex(of: sender.titleLabel!.text!.lowercased()) {
                     self.body_selected.remove(at: index)
                 }
             }
             
         }) { (success) in
-            UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveLinear, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.05, options: .curveLinear, animations: {
                 sender.transform = .identity
             }, completion:nil)
         }

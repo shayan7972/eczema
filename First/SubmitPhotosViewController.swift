@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SubmitPhotosViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     var num=0
@@ -14,9 +15,13 @@ class SubmitPhotosViewController: UIViewController, UITableViewDelegate,UITableV
     
     
     @IBOutlet weak var mytable: UITableView!
+
+
     
     
     var bodyparts = [BodyPart]()
+    var images: Dictionary = [Int:Any]()
+    var sev = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +30,7 @@ class SubmitPhotosViewController: UIViewController, UITableViewDelegate,UITableV
 //        loadSampleData()
         mytable.delegate = self
         mytable.dataSource = self
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,64 +58,105 @@ class SubmitPhotosViewController: UIViewController, UITableViewDelegate,UITableV
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let severities = ["under-control","flare-up","out-of-control"]
-//
         
-        //send body part to server and ask for an answer
-        let sev = sendRequestToServer()
+        var parameters: Dictionary = [String: Data] ()
+        
+        if (images.isEmpty){
+            let alert = UIAlertController(title: "No Picture Captured", message: "Please select at least one body part to proceed.", preferredStyle: UIAlertController.Style.alert)
 
-        let actionplanview = segue.destination as? ActionPlanViewController
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+
+
+        
+        for body in bodyparts {
+            let index = bodyparts.firstIndex{$0 === body}!
+            print(index)
+            let im = images[index]!
+            print(im)
+            parameters[body.name] = im as? Data
+        }
+        print(parameters)
+
+        
+        requestWith(parameters: parameters, completion: {
+            print("completed")
+            
+            let actionplanview = segue.destination as? ActionPlanViewController
+                       //
+                       //
+
+            actionplanview?.bodyparts = self.bodyparts
+            actionplanview?.severities = self.sev
+            
+        })
+        
+            
+
         
         
+       
+    }
+
+    
+    func requestWith(parameters: [String : Any], completion: @escaping () -> Void){
         
-        actionplanview?.bodyparts = bodyparts
-        actionplanview?.severities = sev
+//        let url = "https://eczema-baby.appspot.com/predict"
+        let url = "https://hello-bond.appspot.com/predict"
+
+        
+        let headers: HTTPHeaders = [
+            /* "Authorization": "your_access_token",  in case you need authorization header */
+            "Content-type": "multipart/form-data"
+        ]
+                
+        
+   
+
+       
+        AF.upload(multipartFormData: { multipartFormData in
+                for (key, value) in parameters {
+                    multipartFormData.append(value as! Data, withName: key as String,fileName: key+".jpeg" , mimeType: "image/png")
+                }
+
+            }, to: url, method: .post, headers: headers)
+                .uploadProgress { progress in
+                    print("Upload Progress: \(progress.fractionCompleted)")
+                }
+                .downloadProgress { progress in
+                    print("Download Progress: \(progress.fractionCompleted)")
+                }
+            .responseJSON(completionHandler: { response in
+                
+                switch response.result {
+                case .success(let value):
+                    print(value)
+                    
+                    
+                    if let dictionary = value as? [String: Any] {
+                        for bp in self.bodyparts{
+                            if let state = dictionary[bp.name] as? String {
+                                self.sev.append(state)
+                            }
+                        }
+                        print(dictionary)
+                    }
+                    
+                    completion()
+
+                case let .failure(error):
+                    print(error)
+                    completion()
+                }
+            })
+        
     }
     
-    func sendRequestToServer()->[String]{
-        let url = URL(string: "http://hello-bond.appspot.com/predict")!
-        var request = URLRequest(url: url)
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        var sev = [String]()
-        var parameters: [String: Any] = [:]
-        for body in bodyparts {
-            parameters[body.name] = body.icon
-        }
-        
-        request.httpBody = parameters.percentEscaped().data(using: .utf8)
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data,
-                let response = response as? HTTPURLResponse,
-                error == nil else {                                              // check for fundamental networking error
-                print("error", error ?? "Unknown error")
-                return
-            }
-
-            guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
-                print("statusCode should be 2xx, but is \(response.statusCode)")
-                print("response = \(response)")
-                
-                return
-            }
-
-//            let responseString = String(data: data, encoding: .utf8)
-//            print("responseString = \(responseString)")
-            print(data)
-            print(response)
-            
-            let json_dictionary = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: String]
-            print(json_dictionary)
-            for bp in self.bodyparts{
-                sev.append((json_dictionary?[bp.name])!)
-            }
-        }
-
-        task.resume()
-        return sev
-    }
     
     
     //MARK: Private Methods
@@ -145,6 +192,7 @@ extension SubmitPhotosViewController : TakePictureDelegate,UINavigationControlle
         
         cell2.cameraImage.image = image
         cell2.bodypart.photo = image
+        images[num] = image!.jpegData(compressionQuality: 0.5)
 
     }
     
